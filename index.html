@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black; /* black background */
+        color: white; /* default text color */
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+      model-viewer {
+        width: 100%;
+        height: 100vh;
+        display: block;
+        background-color: black; /* ensure model-viewer itself has black bg */
+      }
+      .bottom-text {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: yellow; /* footer text yellow */
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        pointer-events: none; /* clicks pass through */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element without AR -->
+    <model-viewer
+      src="2sides.glb"
+      camera-controls
+      tone-mapping="neutral"
+      poster="poster.webp"
+      shadow-intensity="1"
+      autoplay
+      camera-orbit="-94.48deg 89.57deg 14.15m"
+      field-of-view="30deg">
+      
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+    </model-viewer>
+
+    <!-- Footer text -->
+    <div class="bottom-text">Đøᵾƀłɇ Sɨđɇđ</div>
+
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </body>
+</html>
+
